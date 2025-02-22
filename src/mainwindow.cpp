@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 {    
     chatServer = std::make_unique<ChatServer>(this);
     ui->setupUi(this);
+
+    this->setStyleSheet("QMainWindow {background-color: orange;}");
     // Устанавливаем заголовок окна
     setWindowTitle("ChatServer");
     // Установка минимального размера окна

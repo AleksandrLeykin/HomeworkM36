@@ -33,6 +33,19 @@
       </item>
       <item>
        <widget class="QPushButton" name="sendMessageButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background-color: purple;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+ QPushButton:hover {
+	 background-color: green; 
+	 color: white;
+   }</string>
+        </property>
         <property name="text">
          <string>Sent to all</string>
         </property>
@@ -40,6 +53,19 @@
       </item>
       <item>
        <widget class="QPushButton" name="privateMessageButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background-color: purple;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+ QPushButton:hover {
+	 background-color: green; 
+	 color: white;
+   }</string>
+        </property>
         <property name="text">
          <string>Send private</string>
         </property>
@@ -50,15 +76,47 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QTextBrowser" name="commonChatTextBrowser"/>
+       <widget class="QTextBrowser" name="commonChatTextBrowser">
+        <property name="styleSheet">
+         <string notr="true">QTextBrowser {
+	background-color: rgb(173, 216, 230);
+    color: black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QTextBrowser" name="privateChatTextBrowser"/>
+       <widget class="QTextBrowser" name="privateChatTextBrowser">
+        <property name="styleSheet">
+         <string notr="true">QTextBrowser {
+	background-color: rgb(173, 216, 230);
+    color: black;
+	border-radius: 10px;
+	 padding: 10px; 
+}</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
      <widget class="QPushButton" name="messageForMeButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: blue;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+ QPushButton:hover {
+	 background-color: green; 
+	 color: yellow;
+   }</string>
+      </property>
       <property name="text">
        <string> Message for me</string>
       </property>

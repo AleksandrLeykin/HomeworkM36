@@ -26,6 +26,7 @@ signals:
 private slots:
     void on_BanButton_clicked();
     void on_unblockButton_clicked();
+    void my_styles();
 
 private:
     QListWidget *userListWidget;

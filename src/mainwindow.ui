@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
@@ -20,11 +23,23 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QPushButton" name="consoleutputButton">
+         <widget class="QPushButton" name="consoleOutputButton">
           <property name="font">
            <font>
             <pointsize>11</pointsize>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: purple;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+QPushButton:hover {
+       background-color: white;
+   }</string>
           </property>
           <property name="text">
            <string>Concole output</string>
@@ -32,7 +47,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QTextBrowser" name="consoleBrowser"/>
+         <widget class="QTextBrowser" name="consoleBrowser">
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser {
+	background-color: rgb(144, 238, 144);
+    color: black;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -45,13 +70,35 @@
             <pointsize>11</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: purple;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+QPushButton:hover {
+       background-color: green;
+   }</string>
+          </property>
           <property name="text">
            <string>Received messages</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QTextEdit" name="textEdit"/>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
+	background-color: rgb(144, 238, 144);
+    color: black;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -66,6 +113,18 @@
             <kerning>false</kerning>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: purple;
+    color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}
+QPushButton:hover {
+       background-color: green;
+   }</string>
+          </property>
           <property name="text">
            <string>User registration</string>
           </property>
@@ -77,6 +136,15 @@
            <font>
             <pointsize>9</pointsize>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser {
+	background-color: rgb(144, 238, 144);
+    color: black;
+	border: 2px solid black;
+	border-radius: 10px;
+	 padding: 10px; 
+}</string>
           </property>
          </widget>
         </item>
@@ -91,6 +159,18 @@
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: blue;
+color: white;
+border: 2px solid black;
+border-radius: 5px;
+padding: 5px;
+}
+QPushButton:hover {
+background-color: red;
+}</string>
+      </property>
       <property name="text">
        <string>User BANING</string>
       </property>
@@ -104,7 +184,7 @@
      <x>0</x>
      <y>0</y>
      <width>856</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
