@@ -18,7 +18,7 @@ MainWindow::MainWindow(std::shared_ptr<ChatClient> chatPtr, QString userName, in
     ui->setupUi(this);
     this->setStyleSheet("QMainWindow {background-color: brown}");
     // Устанавливаем заголовок окна
-    setWindowTitle("ChatClient");
+    setWindowTitle("ChatClient - " + m_userName);
     InstanceCountClient++;
     if(chatPtr)
         m_chatPtr = chatPtr;

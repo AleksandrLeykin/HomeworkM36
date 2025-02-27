@@ -1,4 +1,4 @@
-#ifndef CHATSERVER_H
+ #ifndef CHATSERVER_H
 #define CHATSERVER_H
 
 #include <QTcpServer>
@@ -11,18 +11,9 @@
 class ChatServer : public QTcpServer {
     Q_OBJECT
 public:
-    ChatServer(QObject *parent = nullptr) : QTcpServer(parent) {
-         //connect(this, &QTcpServer::newConnection, this, &ChatServer::onNewConnection);
-    }
+    ChatServer(QObject *parent = nullptr);
 
-    ~ChatServer() {
-        for(QTcpSocket *clientSocket : m_users.keys()){
-            clientSocket->disconnectFromHost(); // Отключаем клиента
-            //clientSocket->deleteLater(); // Помечаем для удаления
-        }
-        clients.clear(); // Очищаем список клиентов
-        m_users.clear();
-    }
+    ~ChatServer();
 
     ChatServer(const ChatServer&) = delete; // Запретить копирование
     ChatServer& operator=(const ChatServer&) = delete; // Запретить присваивание

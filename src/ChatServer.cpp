@@ -3,6 +3,18 @@
 
 
 
+ChatServer::ChatServer(QObject *parent) : QTcpServer(parent) { }
+
+ChatServer::~ChatServer() {
+    for(QTcpSocket *clientSocket : m_users.keys()){
+        // Отключаем клиента
+        clientSocket->disconnectFromHost();
+    }
+    // Очищаем список клиентов
+    clients.clear();
+    m_users.clear();
+}
+
 void ChatServer::startServer(quint16 port) {
     if (!this->listen(QHostAddress::Any, port)) {
         qDebug() << "Server could not start!";
@@ -19,12 +31,17 @@ void ChatServer::onNewConnection() {
     QTcpSocket* clientSocket = this->nextPendingConnection();
 
     if(clientSocket) {
+        connect(clientSocket, &QTcpSocket::readyRead, this, &ChatServer::readMessage);
         // блокировка повторного подключения сигнала отключения
         disconnect(clientSocket, &QTcpSocket::disconnected, this, &ChatServer::clientDisconnected);
         // отключение пользователя
-        connect(clientSocket, &QTcpSocket::disconnected, this, &ChatServer::clientDisconnected);
-        connect(clientSocket, &QTcpSocket::readyRead, this, &ChatServer::readMessage);
+        connect(clientSocket, &QTcpSocket::disconnected, this, &ChatServer::clientDisconnected);        
     }
+    else {
+        qDebug() << "Failed to create socket!";
+        return;
+    }
+
 }
 
 void ChatServer::clientDisconnected() {
@@ -127,6 +144,12 @@ void ChatServer::readMessage() {
         return;
     }
     QByteArray data = clientSocket->readAll();
+
+    if (data.isEmpty()) {
+        qDebug() << "No data received!";
+        return;
+    }
+
     QString message(data);
     qDebug() << logCurrentDateTime() << message;
     // сообщение начинается с "REGISTER", то это команда регистрации
@@ -231,7 +254,6 @@ void ChatServer::readMessage() {
             }
         }
     }
-
     // сообщение начинается с "SHOW MESSAGE FOR ME" показ старых сообщений
     else if (message.startsWith("SHOW MESSAGE FOR ME")) {
         QStringList parts = message.split(':');

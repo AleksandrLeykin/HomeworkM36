@@ -27,14 +27,14 @@ set(CMAKE_AUTOUIC ON)
 # исполняемыe файлы
 add_executable(${PROJECT_NAME}
     src/main.cpp
-	src/sha256.h src/sha256.cpp
-        src/mainwindow.h src/mainwindow.cpp src/mainwindow.ui
-        src/startscreeen.h src/startscreeen.cpp src/startscreeen.ui
-        src/loginform.h src/loginform.cpp src/loginform.ui
-        src/registrationform.h src/registrationform.cpp src/registrationform.ui
-        src/chatclient.h src/chatclient.cpp
-        src/User.h
-        src/usernameregisted.h src/usernameregisted.cpp
+    src/sha256.h src/sha256.cpp
+    src/mainwindow.h src/mainwindow.cpp src/mainwindow.ui
+    src/startscreeen.h src/startscreeen.cpp src/startscreeen.ui
+    src/loginform.h src/loginform.cpp src/loginform.ui
+    src/registrationform.h src/registrationform.cpp src/registrationform.ui
+    src/chatclient.h src/chatclient.cpp
+    src/User.h
+    src/usernameregisted.h src/usernameregisted.cpp
 
 )
 
